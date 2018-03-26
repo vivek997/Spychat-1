@@ -2,7 +2,7 @@ from spy_details import current_status_message
 from spy_details import status
 
 
-def status_message():
+def status_message(current_status_message):
     #check current status message
     if current_status_message != None:
         print('Your current status message is %s \n' % current_status_message)

@@ -16,7 +16,7 @@ if existing.upper() == "Y":
         import spy_details
         print('WELCOME '+user_1.uname)
         # starting chat application.
-        start_chat()
+        start_chat(user_1.uname, user_1.age, user_1.rating)
 
 # for a new user
 elif existing.upper() == "N":
@@ -26,8 +26,9 @@ elif existing.upper() == "N":
         if len(spy_name) > 0:
             # asking for salutation
             spy_salutation = input("What would you like us to call you (Mr. or Ms.) ?")
+            spy_name = spy_salutation + spy_name
 
-            print("Alright " + spy_salutation + " " + spy_name + " I'd like to know a little bit more about you...")
+            print("Alright " + spy_name + " I'd like to know a little bit more about you...")
             # checking age
             spy_age = int(input("What's your age?"))
             if 12 < spy_age < 50:
@@ -45,10 +46,10 @@ elif existing.upper() == "N":
                 spy_is_online = True
                 # welcome with details
                 print("Authentication complete.")
-                print("Welcome "+spy_salutation+" "+spy_name+" your age is "+str(spy_age)+" and rating is "+str(spy_rating)+"!")
+                print("Welcome "+spy_name+" your age is "+str(spy_age)+" and rating is "+str(spy_rating)+"!")
                 print("Proud to have you on board!")
-                spy_name = spy_salutation + " " + spy_name
-                start_chat()
+
+                start_chat(spy_name, spy_age, spy_rating)
             # age is not eligible
             else:
                 print("Sorry you are not of the correct age to be a spy")

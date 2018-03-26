@@ -1,8 +1,26 @@
 from add_status import status_message
 
 
-def start_chat():
+def start_chat(name, age, rating):
     from spy_details import current_status_message
+
+    if not age > 12 and age < 50:
+        # invalid age.
+        error_message = "Invalid age. Provide correct details."
+        print(error_message)
+    else:
+        # authentication complete
+        # show all the spy details
+        # show a greeting message.
+        welcome_message = "Authentication complete. Welcome\n\n" \
+                          "Name : " + name + "\n" \
+                                             "Age: " + str(age) + "\n" \
+                                                                  "Rating: " + str(rating) + "\n" \
+                                                                                             "Proud to have you on board\n"
+        print(welcome_message)
+
+        # displaying menu for user.
+
     show_menu = True
     while show_menu:
         menu_choices = "What do you want to do? \n 1. Add a status update \n " \
