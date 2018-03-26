@@ -1,12 +1,25 @@
+from spy_details import user_1
+from menu import start_chat
+
+
 print("THE SPY CHAT!")
+#importing spy_detail and menu
+
 # existing user or create a new user
-default_user = input("Would you like to continue with the default user or create a new one (Default or Create) ?")
+#Ask the spy to continue as default spy  or create new spy
+question = "Do you want to continue as " + user_1.uname + " (Y/N): "
+existing = input(question)
+
+
 # for existing user
-if default_user == "Default" or default_user == "default":
+if existing.upper() == "Y":
         import spy_details
+        print('WELCOME '+user_1.uname)
+        # starting chat application.
+        start_chat()
 
 # for a new user
-elif default_user == "Create" or default_user == "create":
+elif existing.upper() == "N":
         # asking names
         spy_name = input("Welcome to spy chat, you must tell me your spy name first: ")
         # checking length of the name
@@ -34,6 +47,8 @@ elif default_user == "Create" or default_user == "create":
                 print("Authentication complete.")
                 print("Welcome "+spy_salutation+" "+spy_name+" your age is "+str(spy_age)+" and rating is "+str(spy_rating)+"!")
                 print("Proud to have you on board!")
+                spy_name = spy_salutation + " " + spy_name
+                start_chat()
             # age is not eligible
             else:
                 print("Sorry you are not of the correct age to be a spy")

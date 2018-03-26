@@ -1,29 +1,21 @@
-####### Information123 Of A Default User #######
+####### Information Of A Default User #######
 
-print("For default user")
+
+# default status
+current_status_message = None
+
+# list of default status
+STATUS_MESSAGES = ['My name is Vivek.', 'Location: New Delhi']
 
 
 class User:
-# create class
-    def __init__(self, name, age, rating):
-        self.name = name
+    # create class
+    def __init__(self, uname, age, rating):
+        self.uname = uname
         self.age = age
         self.rating = rating
 
-# define name, age and rating
 
-
+# define user_name, age, rating
 user_1 = User('Mr. Vivek', 20, 3.8)
 user_2 = User('Mr. Ujjwal', 21, 2.6)
-
-
-name = input("Select your default user name: Vivek or Ujjwal")
-if name == "Vivek" or name == "vivek":
-    print("Welcome "+user_1.name+" your age is "+str(user_1.age)+" and rating is "+str(user_1.rating)+"!")
-    print("Proud to have you on board!")
-elif name == "Ujjwal" or name == "ujjwal":
-    print("Welcome "+user_2.name+" your age is "+str(user_2.age)+" and rating is "+str(user_2.rating)+"!")
-    print("Proud to have you on board!")
-else:
-    print("Please provide valid name.")
-
