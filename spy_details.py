@@ -5,7 +5,7 @@
 current_status_message = None
 
 # list of default status
-STATUS_MESSAGES = ['My name is Vivek.', 'Location: New Delhi']
+status = ['My name is Vivek.', 'Location: New Delhi']
 
 
 class User:
