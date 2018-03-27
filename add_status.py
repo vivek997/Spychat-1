@@ -47,6 +47,6 @@ def status_message(current_status_message):
                 print("Invalid choice. Try again.")
         # when user has diffrent choice than yes and no
         else:
-            print('The option you chose is not valid! Press either y or n.')
+            print('The option you choose is not valid! Press either y or n.')
         # updated message will be read
         return updated_status_message

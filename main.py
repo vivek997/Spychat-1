@@ -3,10 +3,10 @@ from menu import start_chat
 
 
 print("THE SPY CHAT!")
-#importing spy_detail and menu
+
 
 # existing user or create a new user
-#Ask the spy to continue as default spy  or create new spy
+
 question = "Do you want to continue as " + user_1.uname + " (Y/N): "
 existing = input(question)
 

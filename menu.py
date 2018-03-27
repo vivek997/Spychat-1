@@ -1,4 +1,5 @@
 from add_status import status_message
+from add_friend import add_friend
 
 
 def start_chat(name, age, rating):
@@ -9,14 +10,14 @@ def start_chat(name, age, rating):
         error_message = "Invalid age. Provide correct details."
         print(error_message)
     else:
-        # authentication complete
-        # show all the spy details
-        # show a greeting message.
+        # if authentication complete
+        # show all the spy details.
+
         welcome_message = "Authentication complete. Welcome\n\n" \
                           "Name : " + name + "\n" \
                                              "Age: " + str(age) + "\n" \
                                                                   "Rating: " + str(rating) + "\n" \
-                                                                                             "Proud to have you on board\n"
+                                                                                        "Proud to have you on board\n"
         print(welcome_message)
 
         # displaying menu for user.
@@ -32,7 +33,9 @@ def start_chat(name, age, rating):
             print('status')
             current_status_message = status_message(current_status_message)
         elif menu_choice == 2:
-            print('Add a friends')
+            # add a new friend
+            number_of_friends = add_friend()
+            print('You have %d friends' % number_of_friends)
 
         elif menu_choice == 3:
             # send a secret message
@@ -55,6 +58,3 @@ def start_chat(name, age, rating):
         else:
             print("wrong choice try again.")
             exit()
-
-
-
