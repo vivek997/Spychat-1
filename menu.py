@@ -1,5 +1,7 @@
 from add_status import status_message
+from send_message import send_message
 from add_friend import add_friend
+from read_message import read_message
 
 
 def start_chat(name, age, rating):
@@ -27,7 +29,7 @@ def start_chat(name, age, rating):
         menu_choices = "What do you want to do? \n 1. Add a status update \n " \
                    "2. Add a friend \n 3. Send a secret message \n " \
                    "4. Read a secret message \n 5. Read chats from a user \n 6. Close application \n"
-        menu_choice = int(input(menu_choices))
+        menu_choice = int(raw_input(menu_choices))
 
         if menu_choice == 1:
             print('status')
@@ -39,11 +41,13 @@ def start_chat(name, age, rating):
 
         elif menu_choice == 3:
             # send a secret message
-            print('send secret msg')
+            print('send a secret message:')
+            send_message()
 
         elif menu_choice == 4:
             # read the secret message sent by friend
             print('Read secret msg')
+            read_message()
 
         elif menu_choice == 5:
             # read the chat history

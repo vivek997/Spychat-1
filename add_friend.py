@@ -6,7 +6,7 @@ def add_friend():
     new_friend = User(" ", " ", 0, 0.0)
 
     # ask user for name
-    new_friend.name = input("Please add your friend's name: ")
+    new_friend.name = raw_input("Please add your friend's name: ")
 
     # user name validation.
     if len(new_friend.name) > 0:
@@ -16,7 +16,7 @@ def add_friend():
         print("Name should be not empty or length is less then 20 char.")
         return add_friend()
 
-    new_friend.salutation = input("What to call Mr. or Ms.?: ")
+    new_friend.salutation = raw_input("What to call Mr. or Ms.?: ")
 
     # user salutation validation
     if len(new_friend.salutation) > 0:
@@ -30,7 +30,7 @@ def add_friend():
     new_friend.name = new_friend.salutation + " " + new_friend.name
 
     # ask for age of friend
-    new_friend.age = int(input("Age: "))
+    new_friend.age = int(raw_input("Age: "))
 
     if 12 < new_friend.age < 50:
         True
@@ -39,7 +39,7 @@ def add_friend():
         return add_friend()
 
     #ask for rating of friend, using float
-    new_friend.rating = float(input("Spy rating? "))
+    new_friend.rating = float(raw_input("Spy rating? "))
 
     if new_friend.rating > 0.0:
         True
