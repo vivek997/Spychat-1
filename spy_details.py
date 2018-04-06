@@ -1,6 +1,6 @@
 ####### Information Of A Default User #######
 from datetime import datetime
-
+import csv
 # default status
 current_status_message = None
 
@@ -38,3 +38,12 @@ friend_three = Spy('Shivam', 'Mr.', 21, 3.7)
 
 # lists of friends
 friends = [friend_one, friend_two, friend_three]
+
+
+def load_friends():
+    with open('friends.csv', 'rb') as friends_data:
+        reader = csv.reader(friends_data)
+
+        for row in reader:
+            friends.append(row)
+    print friends[1]
