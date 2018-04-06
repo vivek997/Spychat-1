@@ -55,5 +55,15 @@ def add_friend():
                          ])
         print('Friend Added!')
 
-    # check total no of friends in a list.
-    return len(friends)
+
+def load_friends():
+        with open('friends.csv', 'rb') as friends_data:
+            reader = csv.reader(friends_data)
+
+            for row in reader:
+                friends.append(row)
+        friend_store = friends[1]
+        print friend_store
+
+        # check total no of friends in a list.
+        return len(friends)
