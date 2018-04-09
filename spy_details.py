@@ -1,49 +1,40 @@
 ####### Information Of A Default User #######
 from datetime import datetime
-import csv
-# default status
+
+
+#default status
 current_status_message = None
+#status messages
+status = ['My name is Vivek Rawal.', 'I love Computer Science', 'Location: New Delhi', 'College: MRIU']
+#Emergency words
+special_words = ['SAVE ME', 'SOS' , 'HELP']
 
-# list of default status
-status = ['My name is Vivek.', 'Location: New Delhi', 'College: MRIU']
 
-
+# creating Spy class
 class Spy:
-    # create class
-    def __init__(self, uname, salutation, age, rating):
-        self.uname = uname
+    def __init__(self,name,salutation,age,rating):
+        self.name= name
         self.salutation = salutation
-        self.age = age
-        self.rating = rating
-        self.is_online = True
-        self.chats = []
-        self.current_status_message = None
+        self.age= age
+        self.rating= rating
+        self.is_online=True
+        self.chats=[]
+        self.current_status_message= None
 
 
+# chats
 class ChatMessage:
-    def __init__(self, message, sent_by_me):
-        self.message = message
-        self.time = datetime.now()
-        self.sent_by_me = sent_by_me
+        def __init__(self, spy_name, friend_name, time, message):
+            self.spy_name = spy_name
+            self.friend_name = friend_name
+            self.time = time
+            self.message = message
 
 
-# define user_name, age, rating
-user_1 = Spy('Vivek', 'Mr.', 20, 4.8)
-
-
-# details of some existing friends
-friend_one = Spy('Ujjwal', 'Mr.', 21, 4.1)
-friend_two = Spy('Princi', 'Ms.', 20, 3.9)
-friend_three = Spy('Shivam', 'Mr.', 21, 3.7)
+# define spy_name,salutation, age, rating)
+spy_1=Spy('Vivek Rawal','Mr',20,4.5)
 
 # lists of friends
-friends = [friend_one, friend_two, friend_three]
-
-
-def load_friends():
-    with open('friends.csv', 'rb') as friends_data:
-        reader = csv.reader(friends_data)
-
-        for row in reader:
-            friends.append(row)
-    print friends[1]
+friends=[]
+# list of chats
+chats = []

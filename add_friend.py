@@ -1,9 +1,10 @@
 from spy_details import Spy, friends
 import csv
+from termcolor import colored
 
 
 def add_friend():
-    # using class user in spy_details
+    #calling spy_details.
     new_friend = Spy(" ", " ", 0, 0.0)
 
     # ask user for name
@@ -27,43 +28,34 @@ def add_friend():
         print("Salutation empty or check length")
         return add_friend()
 
-    # concatination for full name
-    #new_friend.name = new_friend.salutation + " " + new_friend.name
+    # concatination for name
+    new_friend.name = new_friend.salutation + " " + new_friend.name
 
-    # ask for age of friend
+    # ask for age of the friend
     new_friend.age = int(raw_input("Age: "))
 
     if 12 < new_friend.age < 50:
         True
     else:
-        print("Age should be in between 12 to 50")
+        print colored("Age should be in between 12 to 50", "red")
         return add_friend()
 
-    #ask for rating of friend, using float
+    # ask for rating of friend
     new_friend.rating = float(raw_input("Spy rating? "))
 
     if new_friend.rating > 0.0:
         True
     else:
-        print("Ratting should be more than 0.0")
+        print("Rating should be more than 0.0")
         return add_friend()
 
-    # add friend if all conditions check
-    with open('friends.csv', 'a') as friends_data:
+    # add friend using append.
+    friends.append(new_friend)
+    print('Friend Added!')
+    with open("friends.csv", "a") as friends_data:
         writer = csv.writer(friends_data)
-        writer.writerow([new_friend.name, new_friend.salutation, new_friend.rating, new_friend.age, new_friend.is_online
-                         ])
-        print('Friend Added!')
+        writer.writerow(
+            [new_friend.name, new_friend.salutation, new_friend.age, new_friend.rating, new_friend.is_online])
 
-
-def load_friends():
-        with open('friends.csv', 'rb') as friends_data:
-            reader = csv.reader(friends_data)
-
-            for row in reader:
-                friends.append(row)
-        friend_store = friends[1]
-        print friend_store
-
-        # check total no of friends in a list.
-        return len(friends)
+    # check total no of friends in a list.
+    return len(friends)

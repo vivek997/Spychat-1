@@ -1,22 +1,22 @@
-from spy_details import user_1
+from spy_details import spy_1
 from menu import start_chat
-
+import csv
 
 print("THE SPY CHAT!")
 
 
 # existing user or create a new user
 
-question = "Do you want to continue as " + user_1.uname + " (Y/N): "
+question = "Do you want to continue as " + spy_1.name + " (Y/N): "
 existing = raw_input(question)
 
 
 # for existing user
 if existing.upper() == "Y":
         import spy_details
-        print('WELCOME '+user_1.uname)
+        print('WELCOME '+spy_1.name)
         # starting chat application.
-        start_chat(user_1.uname, user_1.age, user_1.rating)
+        start_chat(spy_1.name, spy_1.age, spy_1.rating)
 
 # for a new user
 elif existing.upper() == "N":
@@ -56,6 +56,6 @@ elif existing.upper() == "N":
         # name not provided
         else:
             print("Please provide us with your name first. Try again please.")
-# entry not valid
+# entry not valid. choose default or create.
 else:
         print("Please enter default or create.")
