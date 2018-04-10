@@ -14,8 +14,7 @@ def send_message():
     #output.jpg is a output image, with output name
     output_path = 'output.jpg'
     text = raw_input("What do you want to say?")
-    if text in special_words:
-        text = colored(text + ": IT'S EMMERGENCY!!", "red")
+
     # encoding the message
     Steganography.encode(original_image, output_path, text)
 
